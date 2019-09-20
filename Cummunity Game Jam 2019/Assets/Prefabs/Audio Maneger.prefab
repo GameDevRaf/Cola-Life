@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2394719076961853575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2394719076961853573}
+  - component: {fileID: 2394719076961853572}
+  m_Layer: 0
+  m_Name: Audio Maneger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2394719076961853573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394719076961853575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2394719076961853572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394719076961853575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a314decdd6bba704aa8175075ecd1c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Player Jump
+    Audio_Clip: {fileID: 8300000, guid: 054e4a6d11ad9494db97273b265db849, type: 3}
+    Audio_Source: {fileID: 0}
+    Volume: 0.5
+    Pitch: 0.8
+    Loop: 0
+  - Name: Click Button
+    Audio_Clip: {fileID: 8300000, guid: 0e3e321443ab7f24b9f0f4dd94d272ca, type: 3}
+    Audio_Source: {fileID: 0}
+    Volume: 0.36
+    Pitch: 0.8
+    Loop: 0
+  - Name: Power Up
+    Audio_Clip: {fileID: 8300000, guid: 483df043a883cc24ab7873969faed880, type: 3}
+    Audio_Source: {fileID: 0}
+    Volume: 0.4
+    Pitch: 0.9
+    Loop: 0
+  - Name: Background Theme
+    Audio_Clip: {fileID: 8300000, guid: 93fe1e4816643f3429df3865bf18a66d, type: 3}
+    Audio_Source: {fileID: 0}
+    Volume: 0.35
+    Pitch: 1
+    Loop: 1
+  - Name: Background Theme 2
+    Audio_Clip: {fileID: 8300000, guid: dfb13a16af99c9b48935286ba14a8d55, type: 3}
+    Audio_Source: {fileID: 0}
+    Volume: 0.4
+    Pitch: 1
+    Loop: 1
