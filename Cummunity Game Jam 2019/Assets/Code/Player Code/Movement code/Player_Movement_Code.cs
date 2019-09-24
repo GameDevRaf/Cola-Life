@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player_Movement_Code : MonoBehaviour {
 
-    #region Variables
+    //#region Variables
 
-      #region Transform Variables
+      //#region Transform Variables
 
         [Space]
         [Header("Transform")]
@@ -15,27 +15,27 @@ public class Player_Movement_Code : MonoBehaviour {
 
         [SerializeField] Transform Overlap_Circle;
 
-      #endregion
+      //#endregion
 
-      #region Rigidbody Variables
+      //#region Rigidbody Variables
 
         [Space]
         [Header ("Rigidbody")]
 
         public Rigidbody2D Player_Rigidbody;
 
-      #endregion
+      //#endregion
 
-      #region Layers
+      //#region Layers
 
         [Space]
         [Header ("Layers")]
 
         [SerializeField] LayerMask What_Is_Ground;
 
-      #endregion
+      //#endregion
 
-      #region Float Variables
+      //#region Float Variables
 
         [Space]
         [Header ("Float's")]
@@ -48,18 +48,18 @@ public class Player_Movement_Code : MonoBehaviour {
 
         [SerializeField] float Radius_Size;
 
-      #endregion
+      //#endregion
 
-      #region Integer Variables
+      //#region Integer Variables
 
         private int extra_Jumps;
 
         [Range (0, 10)]
         [SerializeField] int Extra_Jumps;
 
-      #endregion
+      //#endregion
 
-      #region Boolean Variables
+      //#region Boolean Variables
 
         [Space]
         [Header ("Bool's")]
@@ -67,15 +67,17 @@ public class Player_Movement_Code : MonoBehaviour {
         [HideInInspector]
         public bool Player_Can_Move = true;
 
-        private bool Player_Is_Grounded;
+        private bool Player_is_Moving;
+
+        public bool Player_Is_Grounded;
 
         private bool Player_Facing_Right = true;
 
         private bool Ran = false;
 
-      #endregion
+      //#endregion
 
-    #endregion
+    //#endregion
 
     void Start() {
 
@@ -96,7 +98,8 @@ public class Player_Movement_Code : MonoBehaviour {
 
         Player_Jump ();
 
-        if (FindObjectOfType <End_Game> ().cola.Cola_Counter >= FindObjectOfType <End_Game> ().Min_Ok_Cola_Amount && FindObjectOfType <End_Game> ().cola.Cola_Counter <= FindObjectOfType <End_Game> ().Max_Ok_Cola_Amount) {
+        if (FindObjectOfType <End_Game> ().cola.Cola_Counter >= FindObjectOfType <End_Game> ().Min_Ok_Cola_Amount
+        && FindObjectOfType <End_Game> ().cola.Cola_Counter <= FindObjectOfType <End_Game> ().Max_Ok_Cola_Amount) {
 
             Movement_Speed = FindObjectOfType <End_Game> ().Player_Movement_Speed_Minus_12_point_5_Percent;
 
@@ -104,7 +107,8 @@ public class Player_Movement_Code : MonoBehaviour {
 
         if (FindObjectOfType <End_Game> ().cola.Cola_Counter >= FindObjectOfType <End_Game> ().Too_Much_Cola_Amount) {
 
-            Movement_Speed = FindObjectOfType <End_Game> ().Player_Movement_Speed_Minus_25_Percent;
+            Movement_Speed = FindObjectOfType <End_Game> ().
+            Player_Movement_Speed_Minus_25_Percent;
 
         }
 

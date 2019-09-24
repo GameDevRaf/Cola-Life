@@ -24,6 +24,8 @@ public class Cola : MonoBehaviour {
 
         [SerializeField] GameObject Collect_Cola_Particle;
 
+        [SerializeField] GameObject Particle_Parent;
+
       //#endregion
 
       //#region TextMeshPro Variables
@@ -48,11 +50,13 @@ public class Cola : MonoBehaviour {
 
       //#region Integer Variables
 
-        /* [Space]
-           [Header ("Int")] */
+        [Space]
+        [Header ("Int")]
 
         [HideInInspector]
         public int Cola_Counter = 0;
+
+        [SerializeField] int Particale_Destroy_Time = 7;
 
       //#endregion
 
@@ -68,8 +72,10 @@ public class Cola : MonoBehaviour {
 
         if (collision.CompareTag (Tags.Player_Tag)) {
 
-            Instantiate (Collect_Cola_Particle, Cola_GameObject.transform.position,
-            Quaternion.identity);
+            GameObject Cola_Particale = Instantiate (Collect_Cola_Particle,
+            Cola_GameObject.transform.position, Quaternion.identity);
+
+            StartCoroutine (Destroy_Cola_Particale (Cola_Particale));
 
             FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Power_Up_Sound);
 
@@ -81,5 +87,12 @@ public class Cola : MonoBehaviour {
 
     }
 
+    IEnumerator Destroy_Cola_Particale (GameObject Particle) {
+
+        yield return new WaitForSeconds (Particale_Destroy_Time);
+
+        Destroy (Particle);
+
+    }
 
 }
