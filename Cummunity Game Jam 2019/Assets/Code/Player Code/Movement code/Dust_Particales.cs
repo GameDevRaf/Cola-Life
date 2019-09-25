@@ -44,6 +44,15 @@ public class Dust_Particales : MonoBehaviour {
 
         // #endregion
 
+        // #region Float Variables
+
+            [Space]
+            [Header ("Float")]
+
+            [SerializeField] float Delay_Time;
+
+        // #endregion
+
         // #region Boolean Variables
 
             [Space]
@@ -58,11 +67,22 @@ public class Dust_Particales : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        if (player_Movement_Code.Player_Is_Grounded == false &&
+        player_Movement_Code.Player_is_Jumping == true) {
+
+            Jump_Dust_Particale.SetActive (true);
+
+        }
+
+        else {
+
+            Jump_Dust_Particale.SetActive (false);
+
+        }
+
         if (player_Movement_Code.Player_Is_Grounded == false) {
 
             Run_Dust_Particale.SetActive (false);
-
-            Jump_Dust_Particale.SetActive (true);
 
         }
 
@@ -82,7 +102,29 @@ public class Dust_Particales : MonoBehaviour {
 
     void FixedUpdate() {
 
+        /*if (player_Movement_Code.Player_Is_Grounded == false &&
+        player_Movement_Code.Player_is_Jumping == true) {
+
+            StartCoroutine (Particle_Delay (Delay_Time));
+
+        }
+
+        else if(player_Movement_Code.Player_Is_Grounded == true &&
+        player_Movement_Code.Player_is_Jumping == false) {
+
+            Jump_Dust_Particale.SetActive (false);
+
+        }*/
+
         Previous_Position = Player.position;
+
+    }
+
+    IEnumerator Particle_Delay (float Time) {
+
+        yield return new WaitForSeconds (Time);
+
+        Jump_Dust_Particale.SetActive (true);
 
     }
 

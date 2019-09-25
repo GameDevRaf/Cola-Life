@@ -69,6 +69,9 @@ public class Player_Movement_Code : MonoBehaviour {
 
         private bool Player_is_Moving;
 
+        [HideInInspector]
+        public bool Player_is_Jumping;
+
         public bool Player_Is_Grounded;
 
         private bool Player_Facing_Right = true;
@@ -105,7 +108,8 @@ public class Player_Movement_Code : MonoBehaviour {
 
         }
 
-        if (FindObjectOfType <End_Game> ().cola.Cola_Counter >= FindObjectOfType <End_Game> ().Too_Much_Cola_Amount) {
+        if (FindObjectOfType <End_Game> ().cola.Cola_Counter >=
+        FindObjectOfType <End_Game> ().Too_Much_Cola_Amount) {
 
             Movement_Speed = FindObjectOfType <End_Game> ().
             Player_Movement_Speed_Minus_25_Percent;
@@ -155,13 +159,17 @@ public class Player_Movement_Code : MonoBehaviour {
 
             extra_Jumps = Extra_Jumps;
 
+            Player_is_Jumping = false;
+
         }
 
         if (Player_Can_Move == true) {
 
-            #region Jump when W Key pressed
+            //#region Jump when W Key pressed
 
             if (Input.GetKeyDown (KeyCode.W) && extra_Jumps > 0) {
+
+                Player_is_Jumping = true;
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
@@ -173,27 +181,32 @@ public class Player_Movement_Code : MonoBehaviour {
 
             if (Input.GetKeyDown (KeyCode.W) && extra_Jumps <= 0 && Player_Is_Grounded == true) {
 
+                Player_is_Jumping = true;
+
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
             }
 
-            #endregion
+            //#endregion
 
-            #region Jump when Up Arrow Key pressed
+            //#region Jump when Up Arrow Key pressed
 
             if (Input.GetKeyDown (KeyCode.UpArrow) && extra_Jumps > 0) {
+
+                Player_is_Jumping = true;
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
                 extra_Jumps --;
-
             }
 
             if (Input.GetKeyDown (KeyCode.UpArrow) && extra_Jumps <= 0 && Player_Is_Grounded == true) {
+
+                Player_is_Jumping = true;
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
@@ -201,11 +214,13 @@ public class Player_Movement_Code : MonoBehaviour {
 
             }
 
-            #endregion
+            //#endregion
 
-            #region Jump when Space Key pressed
+            //#region Jump when Space Key pressed
 
             if (Input.GetKeyDown (KeyCode.Space) && extra_Jumps > 0) {
+
+                Player_is_Jumping = true;
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
@@ -217,13 +232,15 @@ public class Player_Movement_Code : MonoBehaviour {
 
             if (Input.GetKeyDown (KeyCode.Space) && extra_Jumps <= 0 && Player_Is_Grounded == true) {
 
+                Player_is_Jumping = true;
+
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
             }
 
-            #endregion
+            //#endregion
 
         }
 
