@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EZCameraShake;
 using UnityEngine;
 using TMPro;
+
 public class Cola : MonoBehaviour {
 
     //#region Variables
@@ -48,15 +50,34 @@ public class Cola : MonoBehaviour {
 
       //#endregion
 
+      // #region Float Variables
+
+        [Space]
+        [Header ("Float's")]
+
+        [Range (0.1f, 10f)]
+        [SerializeField] float Camera_Shake_Magnitude = 4f;
+
+        [Range (0.1f, 10f)]
+        [SerializeField] float Camera_Shake_Roughness = 3f;
+
+        [Range (0.01f, 1f)]
+        [SerializeField] float Camera_Shake_Fade_In_Time = 0.2f;
+
+        [Range (0.01f, 1f)]
+        [SerializeField] float Camera_Shake_Fade_Out_Time = 0.4f;
+
+      // #endregion
+
       //#region Integer Variables
 
         [Space]
         [Header ("Int")]
 
+        [SerializeField] int Particale_Destroy_Time = 7;
+
         [HideInInspector]
         public int Cola_Counter = 0;
-
-        [SerializeField] int Particale_Destroy_Time = 7;
 
       //#endregion
 
@@ -74,6 +95,9 @@ public class Cola : MonoBehaviour {
 
             GameObject Cola_Particale = Instantiate (Collect_Cola_Particle,
             Cola_GameObject.transform.position, Quaternion.identity);
+
+            CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+            Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
 
             StartCoroutine (Destroy_Cola_Particale (Cola_Particale));
 

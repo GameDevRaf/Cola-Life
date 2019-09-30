@@ -1075,6 +1075,11 @@ MonoBehaviour:
   Movement_Speed: 13
   Jump_Force: 32
   Radius_Size: 0.5
+  Time_Before_Deactivate: 3.2
+  Camera_Shake_Magnitude: 5
+  Camera_Shake_Roughness: 1.5
+  Camera_Shake_Fade_In_Time: 0.1
+  Camera_Shake_Fade_Out_Time: 0.6
   Extra_Jumps: 0
   Player_Can_Move: 1
   Player_is_Jumping: 0
@@ -2547,6 +2552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jumping Dust
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844606552792813006, guid: c622c274823dd4c478c635f8887d0f37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7844606552792813007, guid: c622c274823dd4c478c635f8887d0f37,
         type: 3}

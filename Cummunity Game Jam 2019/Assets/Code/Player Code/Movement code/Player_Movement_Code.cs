@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EZCameraShake;
 using UnityEngine;
 
 public class Player_Movement_Code : MonoBehaviour {
 
-    //#region Variables
+    // #region Variables
 
-      //#region Transform Variables
+      // #region Transform Variables
 
         [Space]
         [Header("Transform")]
@@ -17,7 +18,7 @@ public class Player_Movement_Code : MonoBehaviour {
 
       //#endregion
 
-      //#region Rigidbody Variables
+      // #region Rigidbody Variables
 
         [Space]
         [Header ("Rigidbody")]
@@ -26,7 +27,7 @@ public class Player_Movement_Code : MonoBehaviour {
 
       //#endregion
 
-      //#region Layers
+      // #region Layers
 
         [Space]
         [Header ("Layers")]
@@ -35,7 +36,7 @@ public class Player_Movement_Code : MonoBehaviour {
 
       //#endregion
 
-      //#region Float Variables
+      // #region Float Variables
 
         [Space]
         [Header ("Float's")]
@@ -48,21 +49,41 @@ public class Player_Movement_Code : MonoBehaviour {
 
         [SerializeField] float Radius_Size;
 
-      //#endregion
+        [SerializeField] float Time_Before_Deactivate = 4f;
 
-      //#region Integer Variables
+        [Space]
+        [Header ("Camera Shake")]
 
-        private int extra_Jumps;
+        [Range (0.1f, 10f)]
+        [SerializeField] float Camera_Shake_Magnitude = 4f;
+
+        [Range (0.1f, 10f)]
+        [SerializeField] float Camera_Shake_Roughness = 3f;
+
+        [Range (0.01f, 1f)]
+        [SerializeField] float Camera_Shake_Fade_In_Time = 0.2f;
+
+        [Range (0.01f, 1f)]
+        [SerializeField] float Camera_Shake_Fade_Out_Time = 0.4f;
+
+      // #endregion
+
+      // #region Integer Variables
+
+        [Space]
+        [Header ("Int")]
 
         [Range (0, 10)]
         [SerializeField] int Extra_Jumps;
 
+        private int extra_Jumps;
+
       //#endregion
 
-      //#region Boolean Variables
+      // #region Boolean Variables
 
         [Space]
-        [Header ("Bool's")]
+        [Header ("Bool")]
 
         [HideInInspector]
         public bool Player_Can_Move = true;
@@ -72,15 +93,16 @@ public class Player_Movement_Code : MonoBehaviour {
         [HideInInspector]
         public bool Player_is_Jumping;
 
+        [HideInInspector]
         public bool Player_Is_Grounded;
 
         private bool Player_Facing_Right = true;
 
         private bool Ran = false;
 
-      //#endregion
+      // #endregion
 
-    //#endregion
+    // #endregion
 
     void Start() {
 
@@ -159,8 +181,6 @@ public class Player_Movement_Code : MonoBehaviour {
 
             extra_Jumps = Extra_Jumps;
 
-            Player_is_Jumping = false;
-
         }
 
         if (Player_Can_Move == true) {
@@ -173,9 +193,14 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
+                CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+                Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
+
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
                 extra_Jumps --;
+
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
 
             }
 
@@ -185,8 +210,12 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
+                CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+                Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
+
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
             }
 
             //#endregion
@@ -199,9 +228,15 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
+                CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+                Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
+
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
                 extra_Jumps --;
+
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
+
             }
 
             if (Input.GetKeyDown (KeyCode.UpArrow) && extra_Jumps <= 0 && Player_Is_Grounded == true) {
@@ -210,7 +245,12 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
+                CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+                Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
+
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
+
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
 
             }
 
@@ -224,9 +264,14 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 FindObjectOfType <Audio_Maneger> ().Play_Sound (Tags.Player_Jump_Sound);
 
+                CameraShaker.Instance.ShakeOnce (Camera_Shake_Magnitude, Camera_Shake_Roughness,
+                Camera_Shake_Fade_In_Time, Camera_Shake_Fade_Out_Time);
+
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
                 extra_Jumps --;
+
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
 
             }
 
@@ -238,11 +283,21 @@ public class Player_Movement_Code : MonoBehaviour {
 
                 Player_Rigidbody.velocity = Vector2.up * Jump_Force;
 
+                StartCoroutine (Player_Not_Jumping (Time_Before_Deactivate));
+
             }
 
             //#endregion
 
         }
+
+    }
+
+    IEnumerator Player_Not_Jumping (float Time) {
+
+        yield return new WaitForSeconds (Time);
+
+        Player_is_Jumping = false;
 
     }
 

@@ -871,6 +871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 526308855}
   - component: {fileID: 526308854}
+  - component: {fileID: 526308856}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -930,6 +931,22 @@ Transform:
   m_Father: {fileID: 108487865}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526308856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526308853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &667190363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,8 +2941,12 @@ MonoBehaviour:
   Cola_Counter_Text: {fileID: 2092161538}
   Player_Collider: {fileID: 743256951}
   Cola_Collider: {fileID: 1642843250}
-  Cola_Counter: 0
+  Camera_Shake_Magnitude: 3
+  Camera_Shake_Roughness: 4.7
+  Camera_Shake_Fade_In_Time: 0.12
+  Camera_Shake_Fade_Out_Time: 0.85
   Particale_Destroy_Time: 7
+  Cola_Counter: 0
 --- !u!4 &1668997043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7294291126970855638, guid: 20ab3cff29e2f844f886196f7555e485,
@@ -5989,31 +6010,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Door
       objectReference: {fileID: 0}
-    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
-        type: 3}
-      propertyPath: cola
-      value: 
-      objectReference: {fileID: 1642843252}
-    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
-        type: 3}
-      propertyPath: player_Movement
-      value: 
-      objectReference: {fileID: 743256953}
-    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 743256949}
-    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
-        type: 3}
-      propertyPath: End_Scene
-      value: 
-      objectReference: {fileID: 1038754545}
-    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
-        type: 3}
-      propertyPath: End_Text
-      value: 
-      objectReference: {fileID: 1689074992}
     - target: {fileID: 7294291126970855638, guid: 20ab3cff29e2f844f886196f7555e485,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6074,6 +6070,31 @@ PrefabInstance:
       propertyPath: player_Movement
       value: 
       objectReference: {fileID: 743256953}
+    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
+        type: 3}
+      propertyPath: cola
+      value: 
+      objectReference: {fileID: 1642843252}
+    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
+        type: 3}
+      propertyPath: player_Movement
+      value: 
+      objectReference: {fileID: 743256953}
+    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 743256949}
+    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
+        type: 3}
+      propertyPath: End_Scene
+      value: 
+      objectReference: {fileID: 1038754545}
+    - target: {fileID: 7294291128494706430, guid: 20ab3cff29e2f844f886196f7555e485,
+        type: 3}
+      propertyPath: End_Text
+      value: 
+      objectReference: {fileID: 1689074992}
     - target: {fileID: 4748944810069128094, guid: 20ab3cff29e2f844f886196f7555e485,
         type: 3}
       propertyPath: Dialouge_Script
