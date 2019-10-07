@@ -7,14 +7,14 @@ public class Obstacle_5 : MonoBehaviour {
     #region Variables
 
     #region Scripts
-        
+
         [Space]
         [Header ("Script")]
 
         [SerializeField] Dialouge Dialouge_Script;
-        
+
       #endregion
-      
+
     #region GameObject Variables
 
     [Space]

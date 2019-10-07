@@ -5,47 +5,47 @@ using UnityEngine;
 public class Obstacle_3 : MonoBehaviour {
 
     #region Variables
-      
+
       #region Scripts
-        
+
         [Space]
         [Header ("Script's")]
 
-        [SerializeField] Dialouge Dialouge_Script;       
-        
+        [SerializeField] Dialouge Dialouge_Script;
+
       #endregion
-      
+
       #region GameObject Variables
-        
+
         [Space]
         [Header ("GameObject")]
 
         [SerializeField] GameObject Bubble_Box;
-        
+
       #endregion
-      
+
       #region Collider's
-        
+
         [Space]
         [Header ("Collider's")]
 
         [SerializeField] Collider2D Player_Collider;
-        
+
         [SerializeField] Collider2D Obstacle_Collider;
-        
+
       #endregion
-      
+
       #region Vector 3 Variables
-        
+
         [Space]
         [Header ("Vector 3")]
 
         [SerializeField] Vector3 Cola_Position = new Vector2 (438f, 76.6f);
 
     #endregion
-      
+
       [SerializeField] Transform Cola;
-      
+
     #endregion
 
     // Update is called once per frame
