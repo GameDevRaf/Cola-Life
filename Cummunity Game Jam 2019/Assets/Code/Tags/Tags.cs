@@ -22,6 +22,9 @@ public class Tags : MonoBehaviour {
                 [TextArea (0, 1)]
                 public static string Player_Tag = "Player";
 
+                [TextArea (0, 1)]
+                public static string Obstacle_Tag = "Obstacle";
+
             //#endregion
 
             //#region Sound Strings

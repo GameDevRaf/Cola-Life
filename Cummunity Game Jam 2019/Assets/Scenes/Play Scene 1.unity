@@ -131,11 +131,11 @@ GameObject:
   - component: {fileID: 481944}
   - component: {fileID: 481945}
   - component: {fileID: 481948}
-  - component: {fileID: 481947}
   - component: {fileID: 481946}
+  - component: {fileID: 481947}
   m_Layer: 0
-  m_Name: Obstacle
-  m_TagString: Untagged
+  m_Name: Obstacle 1
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,9 +240,15 @@ MonoBehaviour:
   Dialouge_Script: {fileID: 46489743}
   Bubble_Box: {fileID: 1600064864}
   Player_Collider: {fileID: 743256951}
-  Obstacle_Collider: {fileID: 481948}
-  Cola_Position: {x: 648, y: 80.33, z: 0}
+  Obstacle_1_Collider: {fileID: 481948}
+  Obstacle_2_Collider: {fileID: 698380889}
+  Obstacle_3_Collider: {fileID: 1377833040}
+  Obstacle_4_Collider: {fileID: 1215112099}
+  Obstacle_5_Collider: {fileID: 1505430977}
+  Cola_Position: {x: 0, y: 80.33, z: 0}
   Cola: {fileID: 1642843249}
+  Obstacles_Position: {fileID: 481944}
+  Cola_Obstacle_Position: 20.82
   Text_Already_Shown: 0
 --- !u!61 &481948
 BoxCollider2D:
@@ -913,7 +919,7 @@ GameObject:
   - component: {fileID: 475366451}
   - component: {fileID: 475366452}
   m_Layer: 11
-  m_Name: Obstacle Collider
+  m_Name: Obstacle 2 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1618,11 +1624,11 @@ GameObject:
   - component: {fileID: 698380887}
   - component: {fileID: 698380890}
   - component: {fileID: 698380889}
-  - component: {fileID: 698380891}
   - component: {fileID: 698380888}
+  - component: {fileID: 698380891}
   m_Layer: 0
-  m_Name: Obstacle (1)
-  m_TagString: Untagged
+  m_Name: Obstacle 2
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1747,15 +1753,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 698380886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1013aadf436a88b439121a7aff020883, type: 3}
+  m_Script: {fileID: 11500000, guid: b7f3de04ad8bc3a47b534755c76ebf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dialouge_Script: {fileID: 46489743}
   Bubble_Box: {fileID: 1600064864}
   Player_Collider: {fileID: 743256951}
-  Obstacle_Collider: {fileID: 698380889}
-  Cola_Position: {x: 758, y: 80.33, z: 0}
+  Obstacle_1_Collider: {fileID: 481948}
+  Obstacle_2_Collider: {fileID: 698380889}
+  Obstacle_3_Collider: {fileID: 1377833040}
+  Obstacle_4_Collider: {fileID: 1215112099}
+  Obstacle_5_Collider: {fileID: 1505430977}
+  Cola_Position: {x: 0, y: 80.33, z: 0}
   Cola: {fileID: 1642843249}
+  Obstacles_Position: {fileID: 698380887}
+  Cola_Obstacle_Position: 20.82
+  Text_Already_Shown: 0
 --- !u!1 &740117236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1780,7 @@ GameObject:
   - component: {fileID: 740117237}
   - component: {fileID: 740117238}
   m_Layer: 11
-  m_Name: Obstacle Collider
+  m_Name: Obstacle 4 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3029,11 +3042,11 @@ GameObject:
   - component: {fileID: 1215112097}
   - component: {fileID: 1215112100}
   - component: {fileID: 1215112099}
-  - component: {fileID: 1215112098}
   - component: {fileID: 1215112101}
+  - component: {fileID: 1215112098}
   m_Layer: 0
-  m_Name: Obstacle (3)
-  m_TagString: Untagged
+  m_Name: Obstacle 4
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3062,15 +3075,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1215112096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf11c33fc24e12c4e9e3b3599b9326ae, type: 3}
+  m_Script: {fileID: 11500000, guid: b7f3de04ad8bc3a47b534755c76ebf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dialouge_Script: {fileID: 46489743}
   Bubble_Box: {fileID: 1600064864}
   Player_Collider: {fileID: 743256951}
-  Obstacle_Collider: {fileID: 1215112099}
-  Cola_Position: {x: 978, y: 80.33, z: 0}
+  Obstacle_1_Collider: {fileID: 481948}
+  Obstacle_2_Collider: {fileID: 698380889}
+  Obstacle_3_Collider: {fileID: 1377833040}
+  Obstacle_4_Collider: {fileID: 1215112099}
+  Obstacle_5_Collider: {fileID: 1505430977}
+  Cola_Position: {x: 0, y: 80.33, z: 0}
   Cola: {fileID: 1642843249}
+  Obstacles_Position: {fileID: 1215112097}
+  Cola_Obstacle_Position: 20.82
+  Text_Already_Shown: 0
 --- !u!61 &1215112099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3418,11 +3438,11 @@ GameObject:
   - component: {fileID: 1377833038}
   - component: {fileID: 1377833041}
   - component: {fileID: 1377833040}
-  - component: {fileID: 1377833042}
   - component: {fileID: 1377833039}
+  - component: {fileID: 1377833042}
   m_Layer: 0
-  m_Name: Obstacle (2)
-  m_TagString: Untagged
+  m_Name: Obstacle 3
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3547,15 +3567,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377833037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a755c2fcea8ea1468aae7b6ec0c6b03, type: 3}
+  m_Script: {fileID: 11500000, guid: b7f3de04ad8bc3a47b534755c76ebf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dialouge_Script: {fileID: 46489743}
   Bubble_Box: {fileID: 1600064864}
   Player_Collider: {fileID: 743256951}
-  Obstacle_Collider: {fileID: 1377833040}
-  Cola_Position: {x: 868, y: 80.33, z: 0}
+  Obstacle_1_Collider: {fileID: 481948}
+  Obstacle_2_Collider: {fileID: 698380889}
+  Obstacle_3_Collider: {fileID: 1377833040}
+  Obstacle_4_Collider: {fileID: 1215112099}
+  Obstacle_5_Collider: {fileID: 1505430977}
+  Cola_Position: {x: 0, y: 80.33, z: 0}
   Cola: {fileID: 1642843249}
+  Obstacles_Position: {fileID: 1377833038}
+  Cola_Obstacle_Position: 20.82
+  Text_Already_Shown: 0
 --- !u!1 &1407204830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,11 +3748,11 @@ GameObject:
   - component: {fileID: 1505430975}
   - component: {fileID: 1505430978}
   - component: {fileID: 1505430977}
-  - component: {fileID: 1505430976}
   - component: {fileID: 1505430979}
+  - component: {fileID: 1505430976}
   m_Layer: 0
-  m_Name: Obstacle (4)
-  m_TagString: Untagged
+  m_Name: Obstacle 5
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3754,15 +3781,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505430974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce9cd91e6d4ccb4e9e141c04d3d42f2, type: 3}
+  m_Script: {fileID: 11500000, guid: b7f3de04ad8bc3a47b534755c76ebf2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Dialouge_Script: {fileID: 46489743}
   Bubble_Box: {fileID: 1600064864}
   Player_Collider: {fileID: 743256951}
-  Obstacle_Collider: {fileID: 1505430977}
-  Cola_Position: {x: 1088, y: 80.33, z: 0}
+  Obstacle_1_Collider: {fileID: 481948}
+  Obstacle_2_Collider: {fileID: 698380889}
+  Obstacle_3_Collider: {fileID: 1377833040}
+  Obstacle_4_Collider: {fileID: 1215112099}
+  Obstacle_5_Collider: {fileID: 1505430977}
+  Cola_Position: {x: 0, y: 80.33, z: 0}
   Cola: {fileID: 1642843249}
+  Obstacles_Position: {fileID: 1505430975}
+  Cola_Obstacle_Position: 20.82
+  Text_Already_Shown: 0
 --- !u!61 &1505430977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3870,7 +3904,7 @@ GameObject:
   - component: {fileID: 1506888785}
   - component: {fileID: 1506888786}
   m_Layer: 11
-  m_Name: Obstacle Collider
+  m_Name: Obstacle 5 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4083,7 +4117,7 @@ GameObject:
   - component: {fileID: 1585627520}
   - component: {fileID: 1585627521}
   m_Layer: 11
-  m_Name: Obstacle Collider
+  m_Name: Obstacle 1 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4506,7 +4540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642843248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 648, y: 80.33, z: 0}
+  m_LocalPosition: {x: 0, y: 80.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1834897398}
@@ -4601,7 +4635,7 @@ MonoBehaviour:
   Cola_GameObject: {fileID: 1642843248}
   Collect_Cola_Particle: {fileID: 7518644950324102612, guid: 990c800f4536bb846b74bf20c138bc7d,
     type: 3}
-  Particle_Parent: {fileID: 0}
+  Particle_Parent: {fileID: 1573097024}
   Cola_Counter_Text: {fileID: 2092161538}
   Player_Collider: {fileID: 743256951}
   Cola_Collider: {fileID: 1642843250}
@@ -8347,7 +8381,7 @@ GameObject:
   - component: {fileID: 2048638922}
   - component: {fileID: 2048638923}
   m_Layer: 11
-  m_Name: Obstacle Collider
+  m_Name: Obstacle 3 Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8779,6 +8813,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385798031659735, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878159140423787579, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750775458174618637, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385797859743944, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385797765261925, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385797406790005, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385798262684728, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389385798931586092, guid: 64f9119d12772164eb65b4374abfd15b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f9119d12772164eb65b4374abfd15b, type: 3}
